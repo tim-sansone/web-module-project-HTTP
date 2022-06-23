@@ -9,6 +9,10 @@ const Movie = (props) => {
     const [movie, setMovie] = useState('');
 
     const { id } = useParams();
+
+    const handleFavorite = () => {
+        addToFavorites(movie)
+    }
     
     useEffect(()=>{
         axios.get(`http://localhost:9000/api/movies/${id}`)
@@ -49,7 +53,7 @@ const Movie = (props) => {
                         </section>
                         
                         <section>
-                            <span className="m-2 btn btn-dark">Favorite</span>
+                            <input type="button" className="m-2 btn btn-dark" value="Favorite" onClick={handleFavorite}/>
                             <Link to={`/movies/edit/${movie.id}`} className="m-2 btn btn-success">Edit</Link>
                             <Link to={`/movies/delete/${movie.id}`} className="m-2 btn btn-danger">Delete</Link>
                         </section>
