@@ -51,7 +51,7 @@ const EditMovieForm = (props) => {
 		<div className="modal-content">
 			<form onSubmit={handleSubmit}>
 				<div className="modal-header">						
-					<h4 className="modal-title">Editing <strong>{movie.title}</strong></h4>
+					<h4 className="modal-title">Editing <strong>{title}</strong></h4>
 				</div>
 				<div className="modal-body">					
 					<div className="form-group">
@@ -78,7 +78,7 @@ const EditMovieForm = (props) => {
 				</div>
 				<div className="modal-footer">			    
 					<input type="submit" className="btn btn-info" value="Save"/>
-					<Link to={`/movies/1`}><input type="button" className="btn btn-default" value="Cancel"/></Link>
+					<Link to={`/movies/${movie.id}`}><input type="button" className="btn btn-default" value="Cancel"/></Link>
 				</div>
 			</form>
 		</div>
